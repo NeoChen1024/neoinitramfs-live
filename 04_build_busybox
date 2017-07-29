@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source "$PWD"/function
+source "$PWD"/config
+
+cd "$SRCDIR"
+
+tar -xf "busybox-${BUSYBOX_VER}.tar.bz2"
+cd busybox-${BUSYBOX_VER}
+
+
+case $BUSYBOX_CONFIG in
+	default)	make $MAKEFLAGS defconfig ;;
+	custom) 	cp "$BASEDIR/$_BUSYBOX_CUSTOM_CONFIG_FILE" .config ;;
+	giantrock)	cp "$BASEDIR/giantrock.bcfg" ;;
+	*)	echo "Invaild BUSYBOX_CONFIG=$BUSYBOX_CONFIG" ;;
+esac
+
+make $MAKEFLAGS
+cp busybox "$BASEDIR/tmp"

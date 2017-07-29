@@ -1,0 +1,8 @@
+#!/bin/sh
+# NeoInitramfs startup script
+
+if [[ -e /dev/fb* ]] ; then
+	for i in tty1 tty2 tty3 tty4 tty5 tty6 ; do
+		setfont -C /dev/$i /etc/Lat2-Terminus16.psfu.gz
+	done
+fi

@@ -1,0 +1,41 @@
+#!/bin/hush
+
+/bin/busybox --install -s /bin
+
+export PATH="/bin:/sbin"
+init=/sbin/init
+
+# functions
+cmdline() {
+	local value
+	value=" $(cat /proc/cmdline) "
+	value="${value##* $1=}"
+	value="${value%% *}"
+	[ "$value" != "" ] && echo "$value"
+}
+
+not_serial() {
+	grep console\=ttyS /proc/cmdline && return 1 || return 0
+}
+
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -o mode=1777 -t tmpfs tmpfs /tmp
+mount -t tmpfs tmpfs /run
+
+mdev -s
+echo /sbin/mdev >/proc/sys/kernel/hotplug
+
+date +"AD %Y/%m/%d [%^a] %H:%M:%S(%s).%N"
+uname -a
+
+if not_serial ; then setfont -C $(tty) /etc/Lat2-Terminus16.psfu.gz ; fi
+
+if grep bootroot /proc/cmdline&&grep root\= /proc/cmdline ; then
+	mkdir new_root
+	mount $(findfs $(cmdline root) ) /new_root
+	if grep init\= /proc/cmdline ; then init=$(cmdline init) ; fi
+	exec switch_root /new_root $init 
+fi
+
+exec hush

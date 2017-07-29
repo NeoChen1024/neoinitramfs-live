@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source "$PWD"/function
+source "$PWD"/config
+
+cd "$SRCDIR"
+tar -xf "sash-${SASH_VER}.tar.gz"
+cd "sash-${SASH_VER}"
+
+make LDFLAGS="$_LDFLAGS"
+cp sash "$TMPDIR"

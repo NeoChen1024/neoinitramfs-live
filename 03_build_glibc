@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source "$PWD"/function
+source "$PWD"/config
+
+cd "$SRCDIR"
+
+tar -xf "glibc-${GLIBC_VER}.tar.xz"
+cd glibc-${GLIBC_VER}
+mkdir build && cd build
+
+../configure --prefix="${BASEDIR}/rootfs" LDFLAGS="${_LDFLAGS}"
+make $MAKEFLAGS
+make install
+
