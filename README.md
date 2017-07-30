@@ -6,7 +6,7 @@
 完全Written from Scratch
 純粹好玩
 
-設定檔：config
+設定檔：config  
 建議建構平台：Arch Linux
 
 靈感來源：[Minimal Linux Live](https://github.com/ivandavidov/minimal)
