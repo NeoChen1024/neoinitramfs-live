@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source "$PWD"/function
+source "$PWD"/config
+
+if [ ! $EUID == 0 ] ; then
+	echo "You need to run this part as root."
+	exit 0
+fi
+
+cd "$BASEDIR/rootfs"
+chmod -Rfv 0755 .
+chown -Rfv root:root .
+
+find . | cpio -ov -H newc --no-absolute-filenames | nice -n 19 xz -zecvv \
+--check=crc32 --lzma2=dict=512KiB -T0 > "$BASEDIR/boot/initramfs.xz"

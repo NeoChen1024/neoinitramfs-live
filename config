@@ -9,6 +9,7 @@ TMPDIR="${BASEDIR}/tmp"
 set -ve
 
 # If wanted, change the version number
+# Unset to disable
 KERNEL_VER="4.11.4"
 GLIBC_VER="2.25"
 BUSYBOX_VER="1.27.1"
@@ -22,4 +23,6 @@ _KERNEL_CUSTOM_CONFIG_FILE="" #Path must be relative to $BASEDIR
 BUSYBOX=copy # build, manual-build, copy
 BUSYBOX_CONFIG=default # default, giantrock, custom
 _BUSYBOX_CUSTOM_CONFIG_FILE="" #Path must be relative to $BASEDIR
+
+ISO_NAME="NeoInitramfs"
 

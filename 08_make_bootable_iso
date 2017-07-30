@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source "$PWD"/function
+source "$PWD"/config
+
+cd "$BASEDIR"
+
+grub-mkrescue -o "$ISO_NAME".iso -v boot=./boot

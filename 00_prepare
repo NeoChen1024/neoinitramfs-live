@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source $PWD/function
-source $PWD/config
+source "$PWD"/function
+source "$PWD"/config
 
 mkdir -p rootfs/bin rootfs/etc/init.d rootfs/include rootfs/lib rootfs/mnt \
 	rootfs/proc rootfs/run rootfs/tmp rootfs/sys rootfs/var/{db,log,tmp}
@@ -9,7 +9,7 @@ mkdir -p rootfs/bin rootfs/etc/init.d rootfs/include rootfs/lib rootfs/mnt \
 mkdir "$SRCDIR"
 mkdir "$TMPDIR"
 
-for bin in wget make gcc bc ; do
+for bin in wget make gcc bc grub-mkrescue ; do
 	if ! exist $bin ; then
 		echo $bin not found, you may need to install it.
 	fi
