@@ -8,6 +8,10 @@
 
 靈感來源：[Minimal Linux Live](https://github.com/ivandavidov/minimal)
 
+**使用前注意事項：**
+
+* 暫時沒有加入自動dhcp設定網路的計畫
+
 
 套件：
 

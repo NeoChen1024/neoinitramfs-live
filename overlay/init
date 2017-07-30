@@ -38,4 +38,8 @@ if grep bootroot /proc/cmdline&&grep root\= /proc/cmdline ; then
 	exec switch_root /new_root $init 
 fi
 
+if grep \ noinit\  /proc/cmdline ; then
 exec hush
+fi
+
+exec init
