@@ -32,3 +32,5 @@ udhcpc的helper和rc.dhcp是參考Minimal Linux Live那裡的
 |----------------------|---------------------------------------------------------------------------|
 | noinit               | 不預設執行Init                                                            |
 | bootroot             | 啟動進去root=指定的裝置 （可以用LABEL=， UUID=， PARTUUID=和 PARTLABEL= ）|
+| init                 | 指定switch_root時用的target init                                          |
+
