@@ -15,7 +15,7 @@ GLIBC_VER="2.25"
 BUSYBOX_VER="1.27.1"
 SASH_VER="3.8"
 
-MAKEFLAGS="" # Set gmake flags
+MAKEFLAGS="-j 3" # Set gmake flags
 _LDFLAGS="-static"
 INITRAMFS_COMPRESS=xz # gz, bz2, lz4, lzo, xz
 KERNEL_CONFIG=giantrock # defconfig, mrproper, custom, menuconfig, giantrock

@@ -11,11 +11,11 @@ cd "linux-${KERNEL_VER}"
 case $KERNEL_CONFIG in
 
 	giantrock)	cp "$BASEDIR"/giantrock.kcfg .config ;;
-	custom)   	cp "$BASEDIR/$_KERNEL_CUSTOM_CONFIG_FILE"
+	custom)   	cp "$BASEDIR/$_KERNEL_CUSTOM_CONFIG_FILE" ;;
 	defconfig)	make $MAKEFLAGS defconfig ;;
 	mrproper)	make $MAKEFLAGS mrproper ;;
 	menuconfig)	make $MAKEFLAGS menuconfig ;;
-	*)	echo "Invaild KERNEL_CONFIG=${KERNEL_CONFIG}"
+	*)	echo "Invaild KERNEL_CONFIG=${KERNEL_CONFIG}" ;;
 esac
 
 make $MAKEFLAGS

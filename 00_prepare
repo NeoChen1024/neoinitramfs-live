@@ -10,7 +10,7 @@ mkdir "$SRCDIR"
 mkdir "$TMPDIR"
 
 for bin in wget make gcc bc grub-mkrescue ; do
-	if ! exist $bin ; then
+	if ! which $bin ; then
 		echo $bin not found, you may need to install it.
 	fi
 done
