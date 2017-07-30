@@ -4,7 +4,7 @@
 從零開始建構一套不正常的Live系統
 
 大部分Written from Scratch  
-udhcpc的helper和rc.dhcp是從Minimal Linux Live那裡借來用的
+udhcpc的helper和rc.dhcp是參考Minimal Linux Live那裡的
 
 純粹好玩
 
@@ -13,7 +13,7 @@ udhcpc的helper和rc.dhcp是從Minimal Linux Live那裡借來用的
 
 靈感來源：[Minimal Linux Live](https://github.com/ivandavidov/minimal)
 
-注意事項：
+**注意事項：**
 
 * 建構平台的Glibc必須和config裡的一樣。
 * 不支援WIFI上網，沒有瀏覽器。
@@ -22,13 +22,13 @@ udhcpc的helper和rc.dhcp是從Minimal Linux Live那裡借來用的
 
 套件：
 
-+ Linux Kernel
-+ Glibc
-+ Busybox
-+ Sash (Standalone Shell)
-+ TCC (Tiny C Compiler)
+* Linux Kernel
+* Glibc
+* Busybox
+* Sash (Standalone Shell)
+* TCC (Tiny C Compiler)
 
-可用核心參數：
-
-+ noinit	不預設執行Init
-+ bootroot	啟動進去root=指定的裝置 （可以用LABEL= 和UUID= ）
+|可用核心參數          |						      |
+|----------------------|------------------------------------------------------|
+| noinit               | 不預設執行Init                                       |
+| bootroot             | 啟動進去root=指定的裝置 （可以用LABEL= 和UUID= ）    |
