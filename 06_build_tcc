@@ -6,7 +6,7 @@ source "$PWD"/config
 cd "$SRCDIR"
 
 tar -xf "tcc-${TCC_VER}.tar.bz2"
-cd tcc-${BUSYBOX_VER}
+cd tcc-${TCC_VER}
 
 ./configure --extra-cflags="$_CFLAGS" --extra-ldflags="$_LDFLAGS" --prefix="$BASEDIR/rootfs"
 

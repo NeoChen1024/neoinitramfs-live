@@ -9,7 +9,7 @@ tar -xf "glibc-${GLIBC_VER}.tar.xz"
 cd glibc-${GLIBC_VER}
 mkdir build && cd build
 
-../configure --prefix="${BASEDIR}/rootfs" LDFLAGS="${_LDFLAGS}"
+../configure --prefix="${BASEDIR}/rootfs" LDFLAGS="${_LDFLAGS}" CFLAGS="${_CFLAGS}"
 make $MAKEFLAGS
 make install
 
