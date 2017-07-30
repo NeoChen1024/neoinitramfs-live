@@ -31,11 +31,11 @@ uname -a
 
 if not_serial ; then setfont -C $(tty) /etc/Lat2-Terminus16.psfu.gz ; fi
 
-if grep bootroot /proc/cmdline&&grep root\= /proc/cmdline ; then
+if grep \ bootroot\  /proc/cmdline&&grep root\=LABEL\= /proc/cmdline||grep root\=UUID\= /proc/cmdline ; then
 	mkdir new_root
 	mount $(findfs $(cmdline root) ) /new_root
 	if grep init\= /proc/cmdline ; then init=$(cmdline init) ; fi
-	exec switch_root /new_root $init 
+	exec switch_root /new_root $init
 fi
 
 if grep \ noinit\  /proc/cmdline ; then

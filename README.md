@@ -27,3 +27,8 @@ udhcpc的helper和rc.dhcp是從Minimal Linux Live那裡借來用的
 + Busybox
 + Sash (Standalone Shell)
 + TCC (Tiny C Compiler)
+
+可用核心參數：
+
++ noinit	不預設執行Init
++ bootroot	啟動進去root=指定的裝置 （可以用LABEL= 和UUID= ）
