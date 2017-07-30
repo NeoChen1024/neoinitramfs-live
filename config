@@ -14,15 +14,16 @@ KERNEL_VER="4.11.4"
 GLIBC_VER="2.25"
 BUSYBOX_VER="1.27.1"
 SASH_VER="3.8"
+TCC_VER="0.9.26"
 
 MAKEFLAGS="-j 3" # Set gmake flags
 _LDFLAGS="-static"
+_CFLAGS="--static"
 INITRAMFS_COMPRESS=xz # gz, bz2, lz4, lzo, xz
 KERNEL_CONFIG=giantrock # defconfig, mrproper, custom, menuconfig, giantrock
 _KERNEL_CUSTOM_CONFIG_FILE="" #Path must be relative to $BASEDIR
 BUSYBOX=copy # build, manual-build, copy
 BUSYBOX_CONFIG=default # default, giantrock, custom
 _BUSYBOX_CUSTOM_CONFIG_FILE="" #Path must be relative to $BASEDIR
-
 ISO_NAME="NeoInitramfs"
 

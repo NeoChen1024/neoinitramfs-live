@@ -1,0 +1,14 @@
+#!/bin/bash
+
+source "$PWD"/function
+source "$PWD"/config
+
+cd "$SRCDIR"
+
+tar -xf "tcc-${TCC_VER}.tar.bz2"
+cd tcc-${BUSYBOX_VER}
+
+./configure --extra-cflags="$_CFLAGS" --extra-ldflags="$_LDFLAGS" --prefix="$BASEDIR/rootfs"
+
+make $MAKEFLAGS
+make $MAKEFLAGS install

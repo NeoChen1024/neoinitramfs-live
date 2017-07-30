@@ -15,7 +15,7 @@ udhcpc的helper和rc.dhcp是從Minimal Linux Live那裡借來用的
 
 注意事項：
 
-* 暫時沒有加入自動dhcp設定網路的計畫。
+* 不支援WIFI上網，沒有瀏覽器。
 * 若要在Initramfs裡加入自己的檔案，加到overlay目錄裡。
 * 要使用不一樣的套件版本，編輯config。
 
@@ -25,4 +25,4 @@ udhcpc的helper和rc.dhcp是從Minimal Linux Live那裡借來用的
 + Glibc
 + Busybox
 + Sash (Standalone Shell)
-
++ TCC (Tiny C Compiler)

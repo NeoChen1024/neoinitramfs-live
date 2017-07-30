@@ -8,5 +8,4 @@ getsrc KERNEL_VER "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-${KERNEL_V
 getsrc GLIBC_VER "https://ftp.gnu.org/gnu/glibc/glibc-${GLIBC_VER}.tar.xz"
 getsrc BUSYBOX_VER "https://busybox.net/downloads/busybox-${BUSYBOX_VER}.tar.bz2"
 getsrc SASH_VER "http://members.tip.net.au/%7Edbell/programs/sash-${SASH_VER}.tar.gz"
-
-cd ..
+getsrc TCC_VER "http://download.savannah.gnu.org/releases/tinycc/tcc-${TCC_VER}.tar.bz2"
