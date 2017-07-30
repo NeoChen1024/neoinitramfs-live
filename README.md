@@ -3,7 +3,9 @@
 就是一個奇怪的Live Initramfs建構腳本
 從零開始建構一套不正常的Live系統
 
-完全Written from Scratch
+大部分Written from Scratch
+udhcpc的helper和rc.dhcp是從Minimal Linux Live那裡借來用的
+
 純粹好玩
 
 設定檔：config  

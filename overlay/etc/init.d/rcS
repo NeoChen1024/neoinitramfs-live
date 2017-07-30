@@ -6,3 +6,5 @@ if [[ -e /dev/fb* ]] ; then
 		setfont -C /dev/$i /etc/Lat2-Terminus16.psfu.gz
 	done
 fi
+
+. /etc/init.d/rc.dhcp

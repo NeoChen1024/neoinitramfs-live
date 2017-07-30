@@ -1,0 +1,6 @@
+for netif in /sys/class/net/* ; do
+	echo "Set ${netif##*/} up" 
+	ip link set ${netif##*/} up
+	[ ${netif##*/} != lo ] && udhcpc -b -i ${netif##*/} -s /etc/dhcp.helper
+done
+
