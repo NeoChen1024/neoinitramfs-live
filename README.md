@@ -28,7 +28,7 @@ udhcpc的helper和rc.dhcp是參考Minimal Linux Live那裡的
 * Sash (Standalone Shell)
 * TCC (Tiny C Compiler)
 
-|可用核心參數          |						      |
-|----------------------|------------------------------------------------------|
-| noinit               | 不預設執行Init                                       |
-| bootroot             | 啟動進去root=指定的裝置 （可以用LABEL= 和UUID= ）    |
+|可用核心參數          |                                                                           |
+|----------------------|---------------------------------------------------------------------------|
+| noinit               | 不預設執行Init                                                            |
+| bootroot             | 啟動進去root=指定的裝置 （可以用LABEL=， UUID=， PARTUUID=和 PARTLABEL= ）|
