@@ -16,7 +16,7 @@ BUSYBOX_VER="1.27.1"
 SASH_VER="3.8"
 TCC_VER="0.9.26"
 
-MAKEFLAGS="-j 3" # Set gmake flags
+MAKEFLAGS="" # Set gmake flags
 _LDFLAGS="-static"
 _CFLAGS="--static"
 INITRAMFS_COMPRESS=xz # gz, bz2, lz4, lzo, xz
