@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source "${PWD}"/function
 source "${PWD}"/config
 
 cd "${SRCDIR}"

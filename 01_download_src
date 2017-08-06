@@ -1,6 +1,12 @@
 #!/bin/bash
 
-source "$PWD"/function
+getsrc()
+{
+	if [ -v $1 ] ; then
+		wget "$2"
+	fi
+}
+
 source "$PWD"/config
 
 cd "$SRCDIR"

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source "$PWD"/function
 source "$PWD"/config
 
 cp "$TMPDIR/sash" "$TMPDIR/busybox" "$BASEDIR/rootfs/bin/"
@@ -11,4 +10,4 @@ ln -s busybox bin/sh
 ln -s busybox bin/hush
 ln -s busybox bin/init
 
-cp -rv "$BASEDIR"/overlay/*  "$BASEDIR"/rootfs/
+cp -rv "$BASEDIR"/copy2initramfs/*  "$BASEDIR"/rootfs/

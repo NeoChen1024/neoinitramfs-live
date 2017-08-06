@@ -1,6 +1,0 @@
-getsrc()
-{
-	if [ -v $1 ] ; then
-		wget "$2"
-	fi
-}

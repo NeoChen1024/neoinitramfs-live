@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source "$PWD"/function
 source "$PWD"/config
 
 if [ ! $EUID == 0 ] ; then

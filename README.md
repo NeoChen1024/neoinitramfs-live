@@ -13,7 +13,7 @@ udhcpc的helper和rc.dhcp是參考Minimal Linux Live那裡的
 
 靈感來源：[Minimal Linux Live](https://github.com/ivandavidov/minimal)
 
-**注意事項：**
+注意事項：
 
 * 建構平台的Glibc必須和config裡的一樣。
 * 不支援WIFI上網，沒有瀏覽器。
