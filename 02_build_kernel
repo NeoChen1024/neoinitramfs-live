@@ -19,4 +19,8 @@ esac
 
 make $MAKEFLAGS
 
+if grep \=m .config 2>&1 > /dev/null ; then
+make INSTALL_MOD_PATH="${BASEDIR}/rootfs"
+fi
+
 cp -L arch/x86_64/boot/bzImage "$BASEDIR/tmp"

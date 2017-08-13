@@ -10,7 +10,7 @@ set -ve
 
 # If wanted, change the version number
 # Unset to disable
-KERNEL_VER="4.11.4"
+KERNEL_VER="4.11.5"
 GLIBC_VER="2.25"
 BUSYBOX_VER="1.27.1"
 SASH_VER="3.8"
