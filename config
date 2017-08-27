@@ -1,24 +1,34 @@
 # NeoInitramfs Build Script Config
 
-#Origin
+#Build option:
+VERBOSE=1
+
+#Shell flags:
+if [ $VERBOSE == 1 ]
+then
+	set -ve
+else
+	set -e
+fi
+
+# Origin directory
 BASEDIR="$PWD"
 SRCDIR="${BASEDIR}/src"
 TMPDIR="${BASEDIR}/tmp"
 
-#Shell flags
-set -ve
-
+# Package version select:
 # If wanted, change the version number
 # Unset to disable
-KERNEL_VER="4.11.5"
-GLIBC_VER="2.25"
-BUSYBOX_VER="1.27.1"
+
+KERNEL_VER="4.11.9"
+GLIBC_VER="2.26"
+BUSYBOX_VER="1.27.2"
 SASH_VER="3.8"
 TCC_VER="0.9.26"
 
 MAKEFLAGS="" # Set gmake flags
-_LDFLAGS="-static"
-_CFLAGS="--static"
+_LDFLAGS="-static -O1"
+_CFLAGS="--static -O2 -g"
 INITRAMFS_COMPRESS=xz # gz, bz2, lz4, lzo, xz
 KERNEL_CONFIG=giantrock # defconfig, mrproper, custom, menuconfig, giantrock
 _KERNEL_CUSTOM_CONFIG_FILE="" #Path must be relative to $BASEDIR
@@ -26,4 +36,3 @@ BUSYBOX=copy # build, manual-build, copy
 BUSYBOX_CONFIG=default # default, giantrock, custom
 _BUSYBOX_CUSTOM_CONFIG_FILE="" #Path must be relative to $BASEDIR
 ISO_NAME="NeoInitramfs"
-
