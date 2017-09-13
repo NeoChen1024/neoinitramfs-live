@@ -1,15 +1,7 @@
 # NeoInitramfs Build Script Config
 
-#Build option:
-VERBOSE=1
-
 #Shell flags:
-if [ $VERBOSE == 1 ]
-then
-	set -ve
-else
-	set -e
-fi
+set -ve
 
 # Origin directory
 BASEDIR="$PWD"
@@ -20,7 +12,7 @@ TMPDIR="${BASEDIR}/tmp"
 # If wanted, change the version number
 # Unset to disable
 
-KERNEL_VER="4.11.9"
+KERNEL_VER="4.13.1"
 GLIBC_VER="2.26"
 BUSYBOX_VER="1.27.2"
 SASH_VER="3.8"
@@ -28,7 +20,7 @@ TCC_VER="0.9.26"
 
 MAKEFLAGS="" # Set gmake flags
 _LDFLAGS="-static -O1"
-_CFLAGS="--static -O2 -g"
+_CFLAGS="--static -O2 -g3"
 INITRAMFS_COMPRESS=xz # gz, bz2, lz4, lzo, xz
 KERNEL_CONFIG=giantrock # defconfig, mrproper, custom, menuconfig, giantrock
 _KERNEL_CUSTOM_CONFIG_FILE="" #Path must be relative to $BASEDIR

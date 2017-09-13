@@ -9,7 +9,12 @@ fi
 
 cd "$BASEDIR/rootfs"
 chmod -Rfv 0755 .
-chown -Rfv root:root .
-
-find . | cpio -ov -H newc --no-absolute-filenames | nice -n 19 xz -zecvv \
---check=crc32 --lzma2=dict=512KiB -T0 > "$BASEDIR/boot/initramfs.xz"
+chown -Rfv 0:0 .
+find . | cpio -ov -H newc --no-absolute-filenames | {
+case INITRAMFS_COMPRESS in
+	xz)	nice -n 19 xz -zcvv --check=crc32 -T0;;
+	lz4)	nice -n 19 lz4 -l -zcvv;;
+	gz)	nice -n 19 gzip -cv;;
+	lzo)	nice -n 19 lzop -cv;;
+	bzip2)	nice -n 19 bzip2 -zcvv;;
+} > "$BASEDIR/boot/initramfs"

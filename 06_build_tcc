@@ -7,7 +7,7 @@ cd "$SRCDIR"
 tar -xf "tcc-${TCC_VER}.tar.bz2"
 cd tcc-${TCC_VER}
 
-./configure --extra-cflags="$_CFLAGS" --extra-ldflags="$_LDFLAGS" --prefix="$BASEDIR/rootfs"
+./configure --extra-cflags="$_CFLAGS" --extra-ldflags="$_LDFLAGS" --prefix=/
 
 make $MAKEFLAGS
-make $MAKEFLAGS install
+make DESTDIR="${BASEDIR}/rootfs" $MAKEFLAGS install
