@@ -15,6 +15,6 @@ case INITRAMFS_COMPRESS in
 	xz)	nice -n 19 xz -zcvv --check=crc32 -T0;;
 	lz4)	nice -n 19 lz4 -l -zcvv;;
 	gz)	nice -n 19 gzip -cv;;
-	lzo)	nice -n 19 lzop -cv;;
+	lzo)	nice -n 19 lzop -cvv;;
 	bzip2)	nice -n 19 bzip2 -zcvv;;
 } > "$BASEDIR/boot/initramfs"

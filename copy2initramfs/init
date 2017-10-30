@@ -22,7 +22,7 @@ not_serial()
 
 root_dev_id()
 {
-	if grep "root=LABEL=\|root=UUID=\|root=PARTUUID=\|root=PARTLABEL=\|" ; then
+	if grep "\broot=LABEL=\|root=UUID=\|root=PARTUUID=\|root=PARTLABEL=\|" ; then
 		return 0
 	else
 		return 1
@@ -42,13 +42,13 @@ uname -a
 
 if not_serial ; then setfont -C $(tty) /etc/Lat2-Terminus16.psfu.gz ; fi
 
-if grep \ bootroot\  /proc/cmdline&&root_dev_id ; then
+if grep '\bbootroot\b' /proc/cmdline&&root_dev_id ; then
 	mkdir new_root
 	mount $(findfs $(cmdline root) ) /new_root
 	if grep init\= /proc/cmdline ; then init=$(cmdline init) ; fi
 	exec switch_root /new_root $init
 else
-	if grep "root=/dev/*" /proc/cmdline ; then
+	if grep "\broot=/dev/*" /proc/cmdline ; then
 		mkdir new_root
 		mount $(cmdline root) /new_root
 		if grep init\= /proc/cmdline ; then init=$(cmdline init) ; fi
@@ -59,7 +59,7 @@ else
 	fi
 fi
 
-if grep \ noinit\  /proc/cmdline ; then
+if grep '\bnoinit\b' /proc/cmdline ; then
 exec hush
 fi
 
