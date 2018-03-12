@@ -12,15 +12,15 @@ TMPDIR="${BASEDIR}/tmp"
 # If wanted, change the version number
 # Unset to disable
 
-KERNEL_VER="4.14.2"
+KERNEL_VER="4.15.8"
 GLIBC_VER="2.26"
-BUSYBOX_VER="1.27.2"
+BUSYBOX_VER="1.28.1"
 SASH_VER="3.8"
 TCC_VER="0.9.26"
 
 MAKEFLAGS="" # Set gmake flags
-_LDFLAGS="-static -O3"
-_CFLAGS="--static -O3 -g3"
+_LDFLAGS="-static -O3 -mtune=native"
+_CFLAGS="--static -O3 -g3 -mtune=native"
 INITRAMFS_COMPRESS=xz # gz, bz2, lz4, lzo, xz
 KERNEL_CONFIG=giantrock # defconfig, mrproper, custom, menuconfig, giantrock
 _KERNEL_CUSTOM_CONFIG_FILE="" #Path must be relative to $BASEDIR
