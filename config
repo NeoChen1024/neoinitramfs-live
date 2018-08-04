@@ -12,9 +12,9 @@ TMPDIR="${BASEDIR}/tmp"
 # If wanted, change the version number
 # Unset to disable
 
-KERNEL_VER="4.16.13"
+KERNEL_VER="4.17.12"
 GLIBC_VER="2.28"
-BUSYBOX_VER="1.28.1"
+BUSYBOX_VER="1.29.2"
 SASH_VER="3.8"
 TCC_VER="0.9.26"
 
